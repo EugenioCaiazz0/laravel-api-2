@@ -10,8 +10,8 @@ class PageController extends Controller
 {//*il compact è inutile perchè aggiunge un livello superfluo (se abbiamo una sola chiave)
  //*invece in caso di più chiavi è necessario -> return response()->json($key1,$key2)
     public function index() {
-       $projects = Project::all();
-
+       $projects = Project::all(); //* Model::with('categoria aggiuntiva')->get() per aggiungere un'altra categoria
+        //* paginate?
        return response()->json($projects);
     }
 }
